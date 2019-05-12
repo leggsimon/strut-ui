@@ -2,6 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import { render } from 'react-dom';
 import yaml from 'js-yaml';
 import { OpenAPIObject } from 'openapi3-ts';
+import { Definition } from './components/Definition';
 
 import './styles.css';
 
@@ -19,7 +20,7 @@ function App() {
 	};
 
 	return (
-		<header className="App">
+		<div className="App">
 			<form onSubmit={importDocument}>
 				<label>
 					Import Document
@@ -32,8 +33,8 @@ function App() {
 					<input type="submit" value="Import" />
 				</label>
 			</form>
-			{openApiDefinition && JSON.stringify(openApiDefinition, null, 2)}
-		</header>
+			{openApiDefinition && <Definition openApiDefinition={openApiDefinition} />}
+		</div>
 	);
 }
 
