@@ -8,5 +8,13 @@ interface Props {
 }
 
 export function Definition({ openApiDefinition }: Props) {
-	return <div>{JSON.stringify(openApiDefinition.info, null, 2)}</div>;
+	return (
+		<div>
+			<div className="metadata">
+				<h1>{openApiDefinition.info.title}</h1>
+				<span />
+			</div>
+			{JSON.stringify(openApiDefinition)}
+		</div>
+	);
 }
