@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import { OpenAPIObject } from 'openapi3-ts';
-
+import { Paths } from './Paths';
 // import './styles.css';
 
 interface Props {
@@ -59,6 +59,7 @@ export function Definition({ openApiDefinition }: Props) {
 					</dl>
 				</details>
 			</div>
+			<Paths paths={openApiDefinition.paths} />
 			{JSON.stringify(openApiDefinition)}
 		</div>
 	);
